@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import {GifExpertApp} from "./gif-expert-app/GifExpert";
+import {NavBarComponent} from "./components/nav-bar/NavBar";
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <GifExpertApp/>
+        <NavBarComponent/>
     </React.StrictMode>,
     document.querySelector('#root')
 );
