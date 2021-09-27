@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import {NavBarComponent} from "./components/nav-bar/NavBar";
+import {AppRouter} from "./routers/AppRouter";
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <NavBarComponent/>
+        <AppRouter/>
     </React.StrictMode>,
     document.querySelector('#root')
 );
