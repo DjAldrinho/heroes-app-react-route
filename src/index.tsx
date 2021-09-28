@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import {AppRouter} from "./routers/AppRouter";
+import {AppRoutes} from "./routes/AppRoutes";
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppRouter/>
+        <AppRoutes/>
     </React.StrictMode>,
     document.querySelector('#root')
 );
