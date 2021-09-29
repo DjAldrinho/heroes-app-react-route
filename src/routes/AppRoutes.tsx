@@ -8,10 +8,8 @@ export const AppRoutes = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/">
-                        <LoginComponent/>
-                    </Route>
-                    <Route path="/dashboard" component={DashboardRoutes}/>
+                    <Route exact path="/" component={LoginComponent}/>
+                    <Route component={DashboardRoutes}/>
                 </Switch>
             </div>
         </Router>

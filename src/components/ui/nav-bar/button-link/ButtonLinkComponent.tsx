@@ -9,7 +9,7 @@ export const ButtonLinkComponent = ({location, name, customClass}: any) => {
         "lg:inline-block",
         "lg:mt-0",
         "text-white",
-        "hover:text-orange-200"
+        "hover:text-red-200"
     ];
 
     const otherClass = [

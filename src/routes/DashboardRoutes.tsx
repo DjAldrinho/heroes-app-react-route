@@ -1,10 +1,8 @@
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-import {MarvelComponent} from "../components/marvel/MarvelComponent";
-import {DCComponent} from "../components/dc/DCComponent";
-import {AnimeComponent} from "../components/anime/AnimeComponent";
 import {HomeComponent} from "../components/home/HomeComponent";
 import {NavBarComponent} from "../components/ui/nav-bar/NavBarComponent";
+import {PokemonComponent} from "../components/pokemon/PokemonComponent";
 
 export const DashboardRoutes = () => {
 
@@ -13,22 +11,13 @@ export const DashboardRoutes = () => {
             <NavBarComponent/>
             <div>
                 <Switch>
-                    <Route exact path="/marvel">
-                        <MarvelComponent/>
-                    </Route>
-                    <Route exact path="/dc">
-                        <DCComponent/>
-                    </Route>
-                    <Route exact path="/anime">
-                        <AnimeComponent/>
-                    </Route>
-                    <Route exact path="/hero/:id">
-                        <AnimeComponent/>
-                    </Route>
-                    <Route exact path="/">
+                    <Route exact path="/dashboard">
                         <HomeComponent/>
                     </Route>
-                    <Redirect exact to="/login"/>
+                    <Route exact path="/dashboard/pokemon/type/:id">
+                        <PokemonComponent/>
+                    </Route>
+                    <Redirect exact to="/"/>
                 </Switch>
             </div>
         </>
