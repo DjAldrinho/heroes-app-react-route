@@ -1,8 +1,9 @@
 import React, {useRef} from 'react';
 import {Link} from "react-router-dom";
 import {ButtonLinkComponent} from "./button-link/ButtonLinkComponent";
-import {useFetch} from "../../../hooks/useFetch";
 import * as _ from "lodash";
+import {getIDUrl} from "../../../helpers/url-helper";
+import {useFetch} from "../../../hooks/useFetch";
 
 
 export const NavBarComponent = () => {
@@ -11,10 +12,6 @@ export const NavBarComponent = () => {
 
     const toggleMenu = () => {
         refMenu.current?.classList.toggle("sm:hidden");
-    }
-
-    const getPokemonId = (url: string) => {
-        return url.split("/")[6];
     }
 
     const {loading, data}: any = useFetch('type');
@@ -34,13 +31,14 @@ export const NavBarComponent = () => {
                 </button>
             </div>
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                <div className="text-sm lg:flex-grow sm:hidden lg:block" ref={refMenu}>
+                <div className="text-sm lg:flex-grow sm:hidden lg:block sm:h-40 lg:h-auto sm:overflow-y-auto"
+                     ref={refMenu}>
                     {loading && <ButtonLinkComponent name="Loading..." customClass={['mr-4']} location="#"/>}
                     {
                         data && data.results.map((type: any, index: number) => {
                             return <ButtonLinkComponent name={_.capitalize(type.name)} customClass={['mr-4']}
                                                         key={index}
-                                                        location={`/dashboard/pokemon/type/${getPokemonId(type.url)}`}/>
+                                                        location={`/dashboard/pokemon/type/${getIDUrl(type.url)}`}/>
                         })
                     }
                     <ButtonLinkComponent name="Logout" location="/" customClass={['lg:hidden', 'sm:block']}/>

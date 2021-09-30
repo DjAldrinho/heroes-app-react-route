@@ -14,6 +14,9 @@ export const DashboardRoutes = () => {
                     <Route exact path="/dashboard">
                         <HomeComponent/>
                     </Route>
+                    <Route exact path="/dashboard/pokemon/:id">
+                        <PokemonComponent/>
+                    </Route>
                     <Route exact path="/dashboard/pokemon/type/:id">
                         <PokemonComponent/>
                     </Route>
